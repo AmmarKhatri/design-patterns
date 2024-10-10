@@ -1,15 +1,19 @@
 package org.example;
+
 enum OS {
-    Android,
+    ANDROID,
     IOS
 }
+
 public class ButtonFactory {
-    public static Button Create(OS type){
-        if (type == OS.Android){
-            return new AndroidButton();
-        } else if (type == OS.IOS){
-            return new iOSButton();
+    public static Button createButton(OS type) {
+        switch (type) {
+            case ANDROID:
+                return new AndroidButton();
+            case IOS:
+                return new iOSButton();
+            default:
+                throw new IllegalArgumentException("Unsupported OS type: " + type);
         }
-        return null;
     }
 }

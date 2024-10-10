@@ -1,11 +1,10 @@
 package org.example;
 
-public class iOSButton implements Button{
-    //private so no one can initialize directly
-    public iOSButton(){}
+public class iOSButton implements Button {
+    public iOSButton() {} // Default constructor
+
     @Override
-    public Button render() {
+    public void render() {
         System.out.println("Rendering my iOS button");
-        return new iOSButton();
     }
 }
